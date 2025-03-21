@@ -1,12 +1,72 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React, { useEffect } from 'react';
+import Navbar from '@/components/Navbar';
+import Hero from '@/components/Hero';
+import CategorySection from '@/components/CategorySection';
+import FeaturedCollections from '@/components/FeaturedCollections';
+import Footer from '@/components/Footer';
+
+const Index: React.FC = () => {
+  useEffect(() => {
+    // Add fade-in animation to elements with animate-fade-in class
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100');
+          entry.target.classList.remove('opacity-0');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.animate-fade-in');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-capsule-bg">
+      <Navbar />
+      <Hero />
+      <CategorySection />
+      <FeaturedCollections />
+      
+      <section id="contribute" className="py-20 bg-capsule-paper relative">
+        <div className="absolute inset-0 opacity-[0.04] bg-noise-pattern mix-blend-multiply" />
+        
+        <div className="capsule-container">
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-block px-3 py-1 bg-capsule-sand rounded-full text-sm font-medium mb-4 animate-fade-in opacity-0">
+              Join Our Mission
+            </div>
+            
+            <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-6 animate-fade-in opacity-0" style={{ animationDelay: '0.1s' }}>
+              Help Preserve North Cyprus Heritage
+            </h2>
+            
+            <p className="text-lg text-capsule-text/80 mb-8 animate-fade-in opacity-0" style={{ animationDelay: '0.2s' }}>
+              Your contributions matter. Share your stories, recipes, photos, and cultural knowledge to help preserve North Cyprus's cultural heritage for future generations.
+            </p>
+            
+            <a 
+              href="#start-contributing" 
+              className="px-6 py-3 bg-capsule-accent hover:bg-capsule-accent/90 text-white rounded-md font-medium transition-all transform hover:translate-y-[-2px] hover:shadow-md inline-block animate-fade-in opacity-0"
+              style={{ animationDelay: '0.3s' }}
+            >
+              Start Contributing
+            </a>
+          </div>
+        </div>
+      </section>
+      
+      <Footer />
     </div>
   );
 };
