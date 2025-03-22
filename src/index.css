@@ -1,5 +1,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -98,8 +99,15 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: "Cormorant Upright", serif;
+    font-weight: 600;
+    font-style: normal;
   }
+}
+.font-serif {
+  font-family: "Cormorant Upright", serif;
+  font-weight: 600;
+  font-style: normal;
 }
 
 /* Custom Styles */
