@@ -1,4 +1,3 @@
-
 export const en = {
   // Navigation
   'home': 'Home',
@@ -56,6 +55,13 @@ export const en = {
   'help_preserve': 'Help Preserve North Cyprus Heritage',
   'contributions_matter': 'Your contributions matter. Share your stories, recipes, photos, and cultural knowledge to help preserve North Cyprus\'s cultural heritage for future generations.',
   'start_contributing': 'Start Contributing',
+  
+  // Auth related
+  "login": "Login",
+  "logout": "Logout",
+  "signup": "Sign Up",
+  "userMenu": "User Menu",
+  "contribute": "Contribute",
   
   // Auth
   'email': 'Email',
