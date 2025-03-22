@@ -38,7 +38,7 @@ export const en = {
   // Featured
   'featured_archives': 'Featured Archives',
   'latest_capsules': 'Latest Cultural Capsules',
-  'featured_description': 'Explore recently contributed cultural treasures from our community. Each capsule preserves a unique aspect of North Cyprus's heritage.',
+  'featured_description': 'Explore recently contributed cultural treasures from our community. Each capsule preserves a unique aspect of North Cyprus\'s heritage.',
   'view_all': 'View All Cultural Capsules',
   'featured_capsules': 'Featured Capsules',
   'cultural_capsules': 'Cultural Capsules',
@@ -54,7 +54,7 @@ export const en = {
   // Contribute
   'join_mission': 'Join Our Mission',
   'help_preserve': 'Help Preserve North Cyprus Heritage',
-  'contributions_matter': 'Your contributions matter. Share your stories, recipes, photos, and cultural knowledge to help preserve North Cyprus's cultural heritage for future generations.',
+  'contributions_matter': 'Your contributions matter. Share your stories, recipes, photos, and cultural knowledge to help preserve North Cyprus\'s cultural heritage for future generations.',
   'start_contributing': 'Start Contributing',
   
   // Auth
