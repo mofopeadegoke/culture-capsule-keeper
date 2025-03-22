@@ -1,4 +1,3 @@
-
 export const collections = [
   {
     title: 'The 1974 Turkish Intervention: Personal Accounts',

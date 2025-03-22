@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -64,7 +63,7 @@ const Featured: React.FC = () => {
                       className="animate-fade-in opacity-0"
                       style={{ animationDelay: `${index * 0.1}s` }}
                     >
-                      <CollectionCard {...collection} />
+                      <CollectionCard {...collection} index={index} />
                     </div>
                   ))}
                 </div>

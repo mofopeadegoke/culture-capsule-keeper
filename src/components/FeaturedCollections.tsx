@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -53,14 +52,14 @@ const FeaturedCollections: React.FC = () => {
                   className="animate-fade-in opacity-0"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <CollectionCard {...collection} />
+                  <CollectionCard {...collection} index={index} />
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <div className="hidden md:block">
-            <CarouselPrevious className="-left-4 bg-white" />
-            <CarouselNext className="-right-4 bg-white" />
+            <CarouselPrevious className="-left-4 bg-white dark:bg-gray-800" />
+            <CarouselNext className="-right-4 bg-white dark:bg-gray-800" />
           </div>
         </Carousel>
         

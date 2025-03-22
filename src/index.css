@@ -93,7 +93,7 @@
   }
 
   body {
-    @apply bg-capsule-bg text-capsule-text antialiased;
+    @apply bg-capsule-bg text-capsule-text dark:bg-gray-900 dark:text-gray-100 antialiased;
     font-family: 'Inter', sans-serif;
   }
 
@@ -105,7 +105,7 @@
 /* Custom Styles */
 @layer components {
   .glass-panel {
-    @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-glass;
+    @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-white/20 dark:border-gray-700/20 shadow-glass;
   }
   
   .capsule-container {
@@ -117,7 +117,7 @@
   }
 
   .subtle-link {
-    @apply relative inline-block text-capsule-text transition-colors;
+    @apply relative inline-block text-capsule-text dark:text-white transition-colors;
   }
 
   .subtle-link::after {
