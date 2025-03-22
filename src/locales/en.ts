@@ -1,3 +1,4 @@
+
 export const en = {
   // Navigation
   'home': 'Home',
@@ -5,11 +6,19 @@ export const en = {
   'recipes': 'Recipes',
   'arts': 'Arts',
   'folklore': 'Folklore',
-  'contribute': 'Contribute',
-  'login': 'Login',
-  'signup': 'Sign Up',
-  'logout': 'Logout',
+  'featured': 'Featured',
   'search': 'Search',
+  'darkMode': 'Dark Mode',
+  'lightMode': 'Light Mode',
+  'language': 'Language',
+  'english': 'English',
+  'turkish': 'Turkish',
+  'capsuleDetail': 'Capsule Detail',
+  'noCapsules': 'No capsules yet.',
+  'loadMore': 'Load More',
+  'pageNotFound': 'Page Not Found',
+  'returnHome': 'Return Home',
+  'contributeText': 'Want to contribute?',
   
   // Hero section
   'hero_title': 'Preserving North Cyprus Cultural Heritage',
@@ -57,11 +66,11 @@ export const en = {
   'start_contributing': 'Start Contributing',
   
   // Auth related
-  "login": "Login",
-  "logout": "Logout",
-  "signup": "Sign Up",
-  "userMenu": "User Menu",
-  "contribute": "Contribute",
+  'login': 'Login',
+  'logout': 'Logout',
+  'signup': 'Sign Up',
+  'userMenu': 'User Menu',
+  'contribute': 'Contribute',
   
   // Auth
   'email': 'Email',
@@ -82,9 +91,4 @@ export const en = {
   'terms_of_service': 'Terms of Service',
   'contact_us': 'Contact Us',
   'all_rights_reserved': 'All rights reserved',
-  
-  // Language
-  'language': 'Language',
-  'english': 'English',
-  'turkish': 'Turkish',
 };
