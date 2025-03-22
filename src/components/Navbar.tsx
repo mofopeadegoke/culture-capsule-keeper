@@ -4,12 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import { Menu, X, Search, User, LogIn } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { Button } from '@/components/ui/button';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, isAuthenticated, logout } = useAuth();
+  const { t } = useLanguage();
   const navigate = useNavigate();
   
   useEffect(() => {
@@ -40,12 +43,12 @@ const Navbar: React.FC = () => {
   };
   
   const navItems = [
-    { name: 'Home', href: '/' },
-    { name: 'History', href: '/history' },
-    { name: 'Recipes', href: '/recipes' },
-    { name: 'Arts', href: '/arts' },
-    { name: 'Folklore', href: '/folklore' },
-    { name: 'Contribute', href: '/contribute' },
+    { name: t('home'), href: '/' },
+    { name: t('history'), href: '/history' },
+    { name: t('recipes'), href: '/recipes' },
+    { name: t('arts'), href: '/arts' },
+    { name: t('folklore'), href: '/folklore' },
+    { name: t('contribute'), href: '/contribute' },
   ];
 
   return (
@@ -83,17 +86,19 @@ const Navbar: React.FC = () => {
         <div className="flex items-center gap-4">
           <button 
             className="p-2 rounded-full text-capsule-text hover:bg-capsule-paper transition-colors duration-200"
-            aria-label="Search"
+            aria-label={t('search')}
           >
             <Search size={20} />
           </button>
+          
+          <LanguageSwitcher />
           
           {isAuthenticated ? (
             <div className="hidden md:flex items-center gap-2">
               <div className="flex items-center gap-2 text-sm text-capsule-text">
                 <span>Hi, {user?.name || 'User'}</span>
                 <Button variant="outline" size="sm" onClick={handleLogout}>
-                  Logout
+                  {t('logout')}
                 </Button>
               </div>
             </div>
@@ -102,12 +107,12 @@ const Navbar: React.FC = () => {
               <Link to="/login">
                 <Button variant="outline" size="sm" className="flex items-center gap-1">
                   <LogIn size={16} />
-                  <span>Login</span>
+                  <span>{t('login')}</span>
                 </Button>
               </Link>
               <Link to="/signup">
                 <Button size="sm" className="bg-capsule-accent hover:bg-capsule-accent/90">
-                  Sign Up
+                  {t('signup')}
                 </Button>
               </Link>
             </div>
@@ -162,7 +167,7 @@ const Navbar: React.FC = () => {
                     setMobileMenuOpen(false);
                   }}
                 >
-                  Logout
+                  {t('logout')}
                 </Button>
               </div>
             ) : (
@@ -173,7 +178,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Button variant="outline" className="w-full">
-                    Login
+                    {t('login')}
                   </Button>
                 </Link>
                 <Link 
@@ -182,7 +187,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Button className="w-full bg-capsule-accent hover:bg-capsule-accent/90">
-                    Sign Up
+                    {t('signup')}
                   </Button>
                 </Link>
               </div>

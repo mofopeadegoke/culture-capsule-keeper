@@ -1,7 +1,9 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { cn } from '@/lib/utils';
 import AnimatedImage from './AnimatedImage';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface CollectionCardProps {
   title: string;
@@ -22,9 +24,11 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
   href,
   className,
 }) => {
+  const { t } = useLanguage();
+  
   return (
-    <a 
-      href={href}
+    <Link 
+      to={href}
       className={cn(
         "group flex flex-col bg-white rounded-xl overflow-hidden shadow-card hover:shadow-capsule transition-all duration-500 transform hover:-translate-y-1",
         className
@@ -49,11 +53,11 @@ const CollectionCard: React.FC<CollectionCardProps> = ({
         </h3>
         
         <div className="mt-auto pt-4 flex items-center justify-between text-xs text-capsule-text/70">
-          <span>By {contributor}</span>
+          <span>{t('by')} {contributor}</span>
           <span>{date}</span>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
